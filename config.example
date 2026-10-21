@@ -1,0 +1,17 @@
+# Copy to ~/.config/daikin/config and chmod 600
+CLIENT_ID="your-client-id"
+CLIENT_SECRET="your-client-secret"
+REDIRECT_URI="https://192.168.0.10:8443/daikin" # must match the app registered on the Daikin developer portal
+
+TARGET=23.0              # switch to fan at or below this
+MARGIN=1.0               # switch back to cooling at TARGET + MARGIN
+SETPOINT_OFFSET=1.0      # unit's own cooling setpoint = TARGET - this, so it never thermo-offs first
+ACTIVE_START=22          # hour control starts (no API calls outside the window)
+ACTIVE_END=10            # hour control stops - unit is left in whatever mode it is in
+POLL_SECONDS=300         # 12h window at 5 min = 144 calls/day
+LOW_BUDGET_POLL_SECONDS=1800
+LOW_BUDGET_CALLS=20      # slow polling when fewer daily calls than this remain
+MIN_DWELL_SECONDS=600    # minimum time between mode switches
+
+# Only needed if the account has more than one unit (see 'status' output)
+DEVICE_ID=""
