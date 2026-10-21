@@ -89,3 +89,7 @@ Closing the `journalctl` window, or logging out, does not stop the service.
 ## Security
 
 The client secret lives only in `~/.config/daikin/config` (mode 600) and the OAuth tokens in `~/.local/state/daikin` (mode 700). Never commit either. If the refresh token is ever rejected, rerun `daikin-hysteresis.sh auth`.
+
+## Licence
+
+[MIT](LICENSE)
